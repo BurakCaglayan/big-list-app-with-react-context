@@ -34,7 +34,7 @@ This project is currently not dependent on any back-end, database or prerequisit
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/BurakCaglayan/basic-login-register-page-without-ui-library.git
+   git clone https://github.com/BurakCaglayan/big-list-app-with-react-context.git
    ```
 
 2. Install NPM packages
