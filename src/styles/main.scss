@@ -70,6 +70,9 @@ $color-yellow: #F1C102;
   .event-list__row__header-cell {
      width: 100%;
   }
+  .list-header {
+    display: none;
+  }
 }
 
 .basket-card{
