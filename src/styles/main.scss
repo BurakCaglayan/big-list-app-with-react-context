@@ -53,3 +53,8 @@ $color-yellow: #F1C102;
     flex-direction: column;
   }
 }
+
+.autoSizer .table .tbody {
+  width: 100%;
+  height: 100%;
+}
