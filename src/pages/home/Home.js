@@ -1,5 +1,7 @@
+import EventList from '../../components/eventList/EventList';
+
 const Home = () => {
-  return <div className="home">Hello World</div>;
+  return <EventList />;
 };
 
 export default Home;
