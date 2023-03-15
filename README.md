@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Big List App With React Context
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Description
 
-## Available Scripts
+Big List App With React Context App, is a simple, almost responsive application developed using React, React Hooks, Context Api & React-window.
+In this project, a case study has been made on how to display big data without performance issues. Of course something has more than one solution. And better it can be ofcourse.
+The general logic of the project is: Even if you have a large amount of data, is it possible to render only the visible part on the screen? So how do we do this?
+This application was created to meet the answer to the above questions.
+App link (On my GitHub Page): [Big List App With React Context](https://burakcaglayan.github.io/big-list-app-with-react-context/)
+### Built With
 
-In the project directory, you can run:
+The major frameworks used when built the project:
 
-### `npm start`
+- [React](https://reactjs.org/)
+- [React-Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Context](https://reactjs.org/docs/context.html)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Scss](https://sass-lang.com/)
+- [React-Window](https://www.npmjs.com/package/react-window)
+- [React-Virtualized-Auto-Sizer](https://www.npmjs.com/package/react-virtualized-auto-sizer)
+- [Gh-Pages](https://www.npmjs.com/package/gh-pages)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To get a local copy up and running follow steps:
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is currently not dependent on any back-end, database or prerequisites. You can continue with the steps below.
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```sh
+   git clone https://github.com/BurakCaglayan/basic-login-register-page-without-ui-library.git
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start Project
 
-### `npm run eject`
+   ```JS
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Scroll up and down the page, resize it and test it on low-processor mobile devices to see if the big data existing in the project is causing any problems.
+Add data to the cart by clicking on the numerical ratios. If you click on the same rate again, see that the data is removed. And look how fast these work.
+For detailed review, please don't forget to examine the elements by opening chrome in developer mode while scrolling. You can also use the React components tool. In this way, you can understand the working logic.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What could be better? What can be added?
+- The design does not look exactly like a table. This may cause some problems in terms of seeing the ratios.
+- Design improvements can also be made for the basket.
+- For scss, 7+1 patterns could be used or each style could be found in its own component file.
+- It would be nice if there was time left for the refactor. There are components and lines that need to be refactored.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### What have I tried in this app?
+- I researched and developed how to display big data on a single page in a performance way.
+- I tried to create the file structure specifically so that it can be used in a large project.
+- Although its design is troublesome, I have developed an application that will work even on phones with low processors. If I make improvements on the design, everything can be much better.
+- It's the first time I've published a repo on gitHub pages. And I learned how this process goes.
