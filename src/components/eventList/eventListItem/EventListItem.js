@@ -15,6 +15,10 @@ const EventListItem = ({
   const event = data[rowKey];
 
   const emptyDataHolder = '-';
+  const eventCode = event.C;
+  const eventName = event.N;
+  const eventTime = event.T;
+  const mbs = event.OCG[1].MBS;
 
   useEffect(() => {
     setSize(rowKey, rowRef.current.getBoundingClientRect().height);
@@ -23,30 +27,30 @@ const EventListItem = ({
   // TODO: If learn how to get data correct, use map & refactor component
   return (
     <div ref={rowRef} className="event-list">
-      <div key={`${event.C}-${rowKey}-1`} className="event-list__row">
+      <div key={`${eventCode}-${rowKey}-1`} className="event-list__row">
         <div className="event-list__row__header-cell">
           <span className="color-secondary">{rowKey + 1}</span>
           <span className="color-danger">{eventGeneralInfo[rowKey]}</span>
         </div>
         <EventListCommonRow
-          uniqKey={`${event.C}-${rowKey}`}
+          uniqKey={`${eventCode}-${rowKey}`}
           headers={headers}
         />
       </div>
       <div
-        key={`${event.C}-${rowKey}-2`}
+        key={`${eventCode}-${rowKey}-2`}
         className="event-list__row"
         onClick={(e) => handleEventSelect({ e, event })}
       >
-        <div className="event-list__row__header-cell">{`${event.C} ${event.T} ${event.N}`}</div>
+        <div className="event-list__row__header-cell">{`${eventCode} ${eventTime} ${eventName}`}</div>
         <div className="event-list__row__cell">Yorumlar</div>
-        <div className="event-list__row__cell" id={`${event.C}-0`}>
-          {event.OCG[1].MBS}
+        <div className="event-list__row__cell" id={`${eventCode}-0`}>
+          {mbs}
         </div>
         <div
-          id={`${event.C}-1`}
+          id={`${eventCode}-1`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-1`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-1`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -55,9 +59,9 @@ const EventListItem = ({
           {event?.OCG[1]?.OC[0]?.O || emptyDataHolder}
         </div>
         <div
-          id={`${event.C}-2`}
+          id={`${eventCode}-2`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-2`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-2`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -69,9 +73,9 @@ const EventListItem = ({
           {event?.OCG[1]?.OC[2]?.O || emptyDataHolder}
         </div>
         <div
-          id={`${event.C}-4`}
+          id={`${eventCode}-4`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-4`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-4`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -80,9 +84,9 @@ const EventListItem = ({
           {event?.OCG[5]?.OC[25]?.O || emptyDataHolder}
         </div>
         <div
-          id={`${event.C}-5`}
+          id={`${eventCode}-5`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-5`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-5`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -99,9 +103,9 @@ const EventListItem = ({
         <div className="event-list__row__cell">-</div>
         <div className="event-list__row__cell">-</div>
         <div
-          id={`${event.C}-7`}
+          id={`${eventCode}-7`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-7`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-7`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -110,9 +114,9 @@ const EventListItem = ({
           {event?.OCG[2]?.OC[3]?.O || emptyDataHolder}
         </div>
         <div
-          id={`${event.C}-8`}
+          id={`${eventCode}-8`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-8`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-8`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -121,9 +125,9 @@ const EventListItem = ({
           {event?.OCG[2]?.OC[4]?.O || emptyDataHolder}
         </div>
         <div
-          id={`${event.C}-9`}
+          id={`${eventCode}-9`}
           className={`clickable event-list__row__cell ${
-            selectedEvents[event.C]?.ratio.id === `${event.C}-9`
+            selectedEvents[eventCode]?.ratio.id === `${eventCode}-9`
               ? 'active'
               : emptyDataHolder
           }`}
