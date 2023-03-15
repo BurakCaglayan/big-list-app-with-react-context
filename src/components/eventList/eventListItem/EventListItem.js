@@ -16,8 +16,8 @@ const EventListItem = ({
 
   // TODO: If learn how to get data correct, use map & refactor component
   return (
-    <div ref={rowRef} className="main_flex">
-      <div key={`${event.C}-${rowKey}-1`} className="table_1">
+    <div ref={rowRef} className="event-list">
+      <div key={`${event.C}-${rowKey}-1`} className="event-list__row">
         <div className="event-list__row__cell" style={{ width: '25%' }}>
           <span className="color-secondary">{rowKey + 1}</span>
           <span className="color-danger">{eventGeneralInfo[rowKey]}</span>
@@ -29,7 +29,7 @@ const EventListItem = ({
       </div>
       <div
         key={`${event.C}-${rowKey}-2`}
-        className="table_1"
+        className="event-list__row"
         onClick={(e) => selectItem({ e, event })}
       >
         <div
