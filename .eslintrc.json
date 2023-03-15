@@ -9,7 +9,6 @@
       "airbnb",
       "plugin:react/recommended",
       "plugin:react-hooks/recommended",
-      "eslint-config-prettier"
   ],
   "overrides": [
   ],
@@ -17,7 +16,7 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
   },
-  "plugins": ["eslint-config-prettier"],
+  "plugins": ["react"],
   "rules": {
       "prettier/prettier": "error",
       "react/jsx-filename-extension": [
