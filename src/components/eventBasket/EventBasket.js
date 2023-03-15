@@ -3,7 +3,7 @@ import { EventBasketContext } from '../../contexts';
 import BasketCard from '../UI/basketCard/BasketCard';
 
 const EventBasket = () => {
-  const { selectedEvents } = useContext(EventBasketContext);
+  const { selectedEvents, totalRatio } = useContext(EventBasketContext);
 
   return (
     <BasketCard
@@ -20,7 +20,9 @@ const EventBasket = () => {
         </>
       ))}
       footer={
-        <div className="basket-card__event-footer">Toplam Tutar: 33.3333</div>
+        <div className="basket-card__event-footer">
+          Toplam Tutar: {totalRatio}
+        </div>
       }
     />
   );
