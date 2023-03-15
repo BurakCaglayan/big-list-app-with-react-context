@@ -1,11 +1,13 @@
 import EventList from '../../components/eventList/EventList';
-import { EventListProvider } from '../../contexts';
+import { EventBasketProvider, EventListProvider } from '../../contexts';
 
 const Home = () => {
   return (
-    <EventListProvider>
-      <EventList />
-    </EventListProvider>
+    <EventBasketProvider>
+      <EventListProvider>
+        <EventList />
+      </EventListProvider>
+    </EventBasketProvider>
   );
 };
 
