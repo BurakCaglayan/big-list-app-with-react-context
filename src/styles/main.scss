@@ -44,17 +44,25 @@ $color-yellow: #F1C102;
   padding: 10px 5px;
 }
 
+.event-list__row__header-cell {
+  @extend .event-list__row__cell;
+  width: 25%;
+}
+
 
 @media only screen and (max-width: 600px) {
   .event-list {
     flex-direction: unset;
   }
-  .event-list__row{
+  .event-list__row {
     flex-direction: column;
+  }
+  .event-list__row__header-cell {
+     width: 100%;
   }
 }
 
-.autoSizer .table .tbody {
+.autoSizer {
   width: 100%;
   height: 100%;
 }

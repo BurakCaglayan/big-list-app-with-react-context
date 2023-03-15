@@ -3,7 +3,7 @@ import React, { useContext, useMemo } from 'react';
 import { VariableSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { getEventTotalCount, getTableHeaders } from '../../utils/common';
-import { EventContext } from '../../contexts';
+import { EventContext, EventBasketContext } from '../../contexts';
 import EventListItem from './eventListItem/EventListItem';
 
 export const useWindowResize = () => {
@@ -31,15 +31,26 @@ export const useWindowResize = () => {
 
 const EventList = () => {
   const { eventGeneralInfo, events } = useContext(EventContext);
+  const { selectedEvents, dispatch } = useContext(EventBasketContext);
 
   const headers = useMemo(() => getTableHeaders(), []);
   const eventTotalCount = useMemo(() => getEventTotalCount(), []);
 
-  // const handleEventSelect = ({ e, event }) => {
-  //   const selectedItemId = e.target.id;
-  //   const selectedItemValue = e.target.dataset.value;
-  //   console.log('itams: ', { selectedItemId, selectedItemValue, event });
-  // };
+  const handleEventSelect = ({ e, event }) => {
+    const selectedItemId = e.target.id;
+    const selectedItemValue = e.target.dataset.value;
+
+    if (selectedItemId) {
+      dispatch({
+        type: 'TOGGLE_BASKET_EVENT',
+        payload: {
+          event,
+          ratio: { id: selectedItemId, value: selectedItemValue },
+        },
+      });
+    }
+  };
+
   const data = Object.values(events);
   const listRef = React.useRef();
   const sizeMap = React.useRef({});
@@ -69,7 +80,8 @@ const EventList = () => {
                 eventTotalCount={eventTotalCount}
                 headers={headers}
                 eventGeneralInfo={eventGeneralInfo}
-                // handleEventSelect={handleEventSelect}
+                handleEventSelect={handleEventSelect}
+                selectedEvents={selectedEvents}
                 setSize={setSize}
                 windowWidth={windowWidth}
               />

@@ -1,24 +1,30 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import EventListCommonRow from '../eventListCommonRow/EventListCommonRow';
 
 const EventListItem = ({
   data,
   index: rowKey,
-  selectItem,
   eventGeneralInfo,
   headers,
+  selectedEvents,
   handleEventSelect,
+  setSize,
+  windowWidth,
 }) => {
   const rowRef = useRef();
   const event = data[rowKey];
 
   const emptyDataHolder = '-';
 
+  useEffect(() => {
+    setSize(rowKey, rowRef.current.getBoundingClientRect().height);
+  }, [setSize, rowKey, windowWidth]);
+
   // TODO: If learn how to get data correct, use map & refactor component
   return (
     <div ref={rowRef} className="event-list">
       <div key={`${event.C}-${rowKey}-1`} className="event-list__row">
-        <div className="event-list__row__cell" style={{ width: '25%' }}>
+        <div className="event-list__row__header-cell">
           <span className="color-secondary">{rowKey + 1}</span>
           <span className="color-danger">{eventGeneralInfo[rowKey]}</span>
         </div>
@@ -30,12 +36,9 @@ const EventListItem = ({
       <div
         key={`${event.C}-${rowKey}-2`}
         className="event-list__row"
-        onClick={(e) => selectItem({ e, event })}
+        onClick={(e) => handleEventSelect({ e, event })}
       >
-        <div
-          className="event-list__row__cell"
-          style={{ width: '25%' }}
-        >{`${event.C} ${event.T} ${event.N}`}</div>
+        <div className="event-list__row__header-cell">{`${event.C} ${event.T} ${event.N}`}</div>
         <div className="event-list__row__cell">Yorumlar</div>
         <div className="event-list__row__cell" id={`${event.C}-0`}>
           {event.OCG[1].MBS}
@@ -43,7 +46,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-1`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-1`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-1`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -54,7 +57,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-2`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-2`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-2`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -68,7 +71,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-4`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-4`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-4`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -79,7 +82,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-5`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-5`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-5`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -98,7 +101,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-7`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-7`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-7`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -109,7 +112,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-8`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-8`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-8`
               ? 'active'
               : emptyDataHolder
           }`}
@@ -120,7 +123,7 @@ const EventListItem = ({
         <div
           id={`${event.C}-9`}
           className={`clickable event-list__row__cell ${
-            handleEventSelect[event.C]?.ratio.id === `${event.C}-9`
+            selectedEvents[event.C]?.ratio.id === `${event.C}-9`
               ? 'active'
               : emptyDataHolder
           }`}
