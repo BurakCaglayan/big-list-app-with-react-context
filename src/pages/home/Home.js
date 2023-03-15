@@ -1,7 +1,12 @@
 import EventList from '../../components/eventList/EventList';
+import { EventListProvider } from '../../contexts';
 
 const Home = () => {
-  return <EventList />;
+  return (
+    <EventListProvider>
+      <EventList />
+    </EventListProvider>
+  );
 };
 
 export default Home;
