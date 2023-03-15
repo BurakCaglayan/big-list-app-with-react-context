@@ -1,4 +1,16 @@
+$color-red: #FF0000;
+$color-green: #1c691c;
+$color-yellow: #F1C102;
+
 .event-list__row__cell {
   display: flex;
   padding: 10px 5px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.active {
+  background-color: $color-yellow;
 }
