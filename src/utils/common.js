@@ -19,14 +19,14 @@ export const getTableHeaders = () => [
   'Var',
   'Yok',
   '+99',
-]
+];
 
 export const getEventTotalCount = () => Object.keys(data.Events).length;
 
 export const populateData = () => {
   const events = data?.Events;
   const eventGeneralInfo = [];
-  Object.values(events).forEach(event => {
+  Object.values(events).forEach((event) => {
     eventGeneralInfo.push(`${event.D} ${event.DAY} ${event.LN}`);
   });
 
