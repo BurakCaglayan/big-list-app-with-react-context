@@ -5,6 +5,7 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import { getEventTotalCount, getTableHeaders } from '../../utils/common';
 import { EventContext, EventBasketContext } from '../../contexts';
 import EventListItem from './eventListItem/EventListItem';
+import EventListHeader from './eventListHeader/EventListHeader';
 
 export const useWindowResize = () => {
   const [size, setSize] = React.useState([0, 0]);
@@ -62,34 +63,37 @@ const EventList = () => {
   const [windowWidth] = useWindowResize();
 
   return (
-    <AutoSizer>
-      {({ height, width }) => (
-        <List
-          itemSize={getSize}
-          ref={listRef}
-          itemData={data}
-          itemCount={data.length}
-          height={height}
-          width={width}
-        >
-          {({ data, index, style }) => (
-            <div style={style}>
-              <EventListItem
-                data={data}
-                index={index}
-                eventTotalCount={eventTotalCount}
-                headers={headers}
-                eventGeneralInfo={eventGeneralInfo}
-                handleEventSelect={handleEventSelect}
-                selectedEvents={selectedEvents}
-                setSize={setSize}
-                windowWidth={windowWidth}
-              />
-            </div>
-          )}
-        </List>
-      )}
-    </AutoSizer>
+    <>
+      <EventListHeader eventTotalCount={eventTotalCount} headers={headers} />
+      <AutoSizer>
+        {({ height, width }) => (
+          <List
+            itemSize={getSize}
+            ref={listRef}
+            itemData={data}
+            itemCount={data.length}
+            height={height}
+            width={width}
+          >
+            {({ data, index, style }) => (
+              <div style={style}>
+                <EventListItem
+                  data={data}
+                  index={index}
+                  eventTotalCount={eventTotalCount}
+                  headers={headers}
+                  eventGeneralInfo={eventGeneralInfo}
+                  handleEventSelect={handleEventSelect}
+                  selectedEvents={selectedEvents}
+                  setSize={setSize}
+                  windowWidth={windowWidth}
+                />
+              </div>
+            )}
+          </List>
+        )}
+      </AutoSizer>
+    </>
   );
 };
 
