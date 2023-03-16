@@ -50,9 +50,7 @@ const EventListItem = ({
           style={{ minWidth: '20%' }}
         >{`${eventCode} ${eventTime} ${eventName}`}</div>
         <div className="event-list__row__cell">Yorumlar</div>
-        <div className="event-list__row__cell" id={`${eventCode}-0`}>
-          {mbs}
-        </div>
+        <div className="event-list__row__cell">{mbs}</div>
         <div
           id={`${eventCode}-1`}
           className={`clickable event-list__row__cell ${
