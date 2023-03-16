@@ -28,7 +28,10 @@ const EventListItem = ({
   return (
     <div ref={rowRef} className="event-list">
       <div key={`${eventCode}-${rowKey}-1`} className="event-list__row">
-        <div className="event-list__row__header-cell">
+        <div
+          className="event-list__row__header-cell"
+          style={{ minWidth: '20%' }}
+        >
           <span className="color-secondary">{rowKey + 1}</span>
           <span className="color-danger">{eventGeneralInfo[rowKey]}</span>
         </div>
@@ -42,7 +45,10 @@ const EventListItem = ({
         className="event-list__row"
         onClick={(e) => handleEventSelect({ e, event })}
       >
-        <div className="event-list__row__header-cell">{`${eventCode} ${eventTime} ${eventName}`}</div>
+        <div
+          className="event-list__row__header-cell"
+          style={{ minWidth: '20%' }}
+        >{`${eventCode} ${eventTime} ${eventName}`}</div>
         <div className="event-list__row__cell">Yorumlar</div>
         <div className="event-list__row__cell" id={`${eventCode}-0`}>
           {mbs}
