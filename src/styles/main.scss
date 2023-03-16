@@ -29,6 +29,7 @@ $color-yellow: #F1C102;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   @extend .boder-collapse;
 }
 
